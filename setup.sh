@@ -41,6 +41,7 @@ formulas=(
   redis
   atom
   docker
+  rcm
 )
 
 apps=(
