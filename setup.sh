@@ -58,5 +58,8 @@ brew install ${formulas[@]}
 
 # env RCRC=$HOME/computer/rcrc rcup
 
+# install oh-my-zsh
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # change to zsh
 chsh -s $(which zsh)
