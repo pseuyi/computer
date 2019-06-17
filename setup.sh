@@ -9,9 +9,9 @@ fancy_echo() {
 
 echo "setting up computer . . ."
 
-add_zshrc() {
-
-}
+# add_zshrc() {
+#
+# }
 
 echo "checking homebrew . . ."
 which -s brew
@@ -29,7 +29,7 @@ formulas=(
   git
   zsh
   heroku
-  aws
+  # aws
   node
   npm
   yarn
@@ -44,17 +44,19 @@ formulas=(
   rcm
 )
 
-apps=(
-  google-chrome
-  atom
-  vlc
-)
+# apps=(
+#   google-chrome
+#   atom
+#   vlc
+# )
 
 echo "installing formulas . . ."
 brew install ${formulas[@]}
 
-echo "installing applications . . ."
-brew cask install --appdir="/Applications" ${apps[@]}
+# echo "installing applications . . ."
+# brew cask install --appdir="/Applications" ${apps[@]}
+
+# env RCRC=$HOME/computer/rcrc rcup
 
 # change to zsh
 chsh -s $(which zsh)
