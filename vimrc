@@ -33,6 +33,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'mileszs/ack.vim'
 
 let NERDTreeShowHidden=1
 
