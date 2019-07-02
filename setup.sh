@@ -42,6 +42,9 @@ formulas=(
   atom
   docker
   rcm
+  ack
+  the_silver_searcher
+  neovim
 )
 
 # apps=(
