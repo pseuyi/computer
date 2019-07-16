@@ -93,3 +93,5 @@ export PATH=$HOME/.rbenv/shims:$PATH
 
 alias ss-stg='open https://spacestation-v2-staging.wework.com/$(git rev-parse --abbrev-ref HEAD 2> /dev/null)/index.html'
 alias ss-lcl='open http://localhost:1337'
+alias y='yarn'
+alias n='npm'
