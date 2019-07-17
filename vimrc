@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set directory^=$HOME/.vim/tmp//
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
