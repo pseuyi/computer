@@ -37,6 +37,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'mileszs/ack.vim'
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plugin 'Quramy/tsuquyomi'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
