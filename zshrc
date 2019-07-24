@@ -89,7 +89,7 @@ alias zshconfig="nano ~/.zshrc"
 alias be="bundle exec"
 
 export PATH=$HOME/.rbenv/shims:$PATH
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 alias ss-stg='open https://spacestation-v2-staging.wework.com/$(git rev-parse --abbrev-ref HEAD 2> /dev/null)/index.html'
 alias ss-lcl='open http://localhost:1337'
