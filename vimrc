@@ -7,6 +7,7 @@ call vundle#begin()
 set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
+" set termguicolors
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -61,5 +62,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 autocmd VimEnter * NERDTree
-:colorscheme garden
+set background=light
+colorscheme solarized8
 syntax on
