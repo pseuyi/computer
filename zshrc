@@ -95,5 +95,8 @@ alias ss-stg='open https://spacestation-v2-staging.wework.com/$(git rev-parse --
 alias ss-lcl='open http://localhost:1337'
 alias y='yarn'
 alias n='npm'
-alias vim="nvim"
-alias vi="nvim"
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+  alias vi="nvim"
+fi
