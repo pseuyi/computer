@@ -40,6 +40,8 @@ Plugin 'mileszs/ack.vim'
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'Quramy/tsuquyomi'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'justinmk/vim-syntax-extra'
+Plugin '907th/vim-auto-save'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
