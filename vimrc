@@ -43,6 +43,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin '907th/vim-auto-save'
 
+let g:auto_save = 1
+
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
