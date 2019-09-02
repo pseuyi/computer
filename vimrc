@@ -42,6 +42,7 @@ Plugin 'Quramy/tsuquyomi'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin '907th/vim-auto-save'
+Plugin 'ElmCast/elm-vim'
 
 let g:auto_save = 1
 
