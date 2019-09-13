@@ -8,6 +8,7 @@ set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
 " set termguicolors
+set ma
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
