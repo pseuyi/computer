@@ -52,6 +52,9 @@ if executable('ag')
 endif
 
 let NERDTreeShowHidden=1
+" NerdTreeToggle alias
+let mapleader = ","
+nmap <leader>ne :NERDTreeToggle<cr>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
