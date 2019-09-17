@@ -46,6 +46,11 @@ Plugin '907th/vim-auto-save'
 Plugin 'elmcast/elm-vim'
 Plugin 'avh4/elm-format'
 
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules\|DS_Store\|.git'
+  \ }
+
 let g:auto_save = 1
 
 let g:elm_format_autosave = 1
