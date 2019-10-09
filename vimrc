@@ -9,6 +9,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
 " set termguicolors
 set ma
+set autochdir
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -51,7 +52,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules\|DS_Store\|.git'
   \ }
 
-let g:auto_save = 1
+" let g:auto_save = 1
 
 let g:elm_format_autosave = 1
 
