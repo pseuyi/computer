@@ -57,6 +57,7 @@ ZSH_THEME="refined"
 plugins=(git git-open ruby rails rbenv nvm rust docker)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.we/we.sh
 
 # User configuration
 
