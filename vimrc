@@ -48,6 +48,7 @@ Plugin '907th/vim-auto-save'
 Plugin 'elmcast/elm-vim'
 Plugin 'avh4/elm-format'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 let g:ctrlp_map = '<c-p>'
 
