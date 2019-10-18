@@ -1,3 +1,5 @@
+au! BufNewFile,BufRead *.svelte set ft=html
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -45,13 +47,16 @@ Plugin 'justinmk/vim-syntax-extra'
 Plugin '907th/vim-auto-save'
 Plugin 'elmcast/elm-vim'
 Plugin 'avh4/elm-format'
+Plugin 'tpope/vim-surround'
+
+let g:ctrlp_map = '<c-p>'
 
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules\|DS_Store\|.git'
   \ }
 
-let g:auto_save = 1
+" let g:auto_save = 1
 
 let g:elm_format_autosave = 1
 
