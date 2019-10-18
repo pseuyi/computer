@@ -49,6 +49,7 @@ Plugin 'elmcast/elm-vim'
 Plugin 'avh4/elm-format'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'valloric/youcompleteme'
 
 let g:ctrlp_map = '<c-p>'
 
