@@ -12,6 +12,9 @@ set directory^=$HOME/.vim/tmp//
 " set termguicolors
 set ma
 
+" insert spaces on tab
+set tabstop=2 shiftwidth=2 expandtab
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
