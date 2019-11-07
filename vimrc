@@ -13,7 +13,7 @@ set directory^=$HOME/.vim/tmp//
 set ma
 
 " insert spaces on tab
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2 shiftwidth=2 expandtab  autoindent smartindent
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
