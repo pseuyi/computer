@@ -7,6 +7,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 source $HOME/.ghcup/env
+# export PATH="/usr/local/opt/bison/bin:$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,6 +98,7 @@ alias ss-lcl='open http://localhost:1337'
 alias gp='g pull'
 alias y='yarn'
 alias n='npm'
+alias ln='link'
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
