@@ -78,7 +78,7 @@ nmap <leader>ne :NERDTreeToggle<cr>
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 "e To ignore plugin indent changes, instead use:
