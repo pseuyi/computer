@@ -79,7 +79,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 "e To ignore plugin indent changes, instead use:
 " filetype plugin on
@@ -97,3 +97,5 @@ autocmd VimEnter * NERDTree
 set background=light
 colorscheme solarized8
 syntax on
+
+:command P Prettier
