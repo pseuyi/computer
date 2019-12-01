@@ -53,6 +53,18 @@ Plugin 'avh4/elm-format'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'valloric/youcompleteme'
+Plugin 'itchyny/lightline.vim'
+
+" lightline configuration
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 let g:ctrlp_map = '<c-p>'
 
