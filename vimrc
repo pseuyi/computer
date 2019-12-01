@@ -9,7 +9,7 @@ call vundle#begin()
 set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
-" set termguicolors
+set termguicolors
 set ma
 
 " insert spaces on tab
