@@ -66,6 +66,7 @@ let g:lightline = {
       \ },
       \ }
 
+" ctrl p
 let g:ctrlp_map = '<c-p>'
 
 let g:ctrlp_working_path_mode = 'ra'
@@ -74,17 +75,19 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 " let g:auto_save = 1
-
 let g:elm_format_autosave = 1
 
+" silver searcher
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" nerd tree
 let NERDTreeShowHidden=1
 " NerdTreeToggle alias
 let mapleader = ","
 nmap <leader>ne :NERDTreeToggle<cr>
+autocmd VimEnter * NERDTree
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,7 +96,7 @@ filetype plugin indent on    " required
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-"e To ignore plugin indent changes, instead use:
+" To ignore plugin indent changes, instead use:
 " filetype plugin on
 ""
 " Brief help
@@ -105,9 +108,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-autocmd VimEnter * NERDTree
 set background=light
-colorscheme solarized8
+colorscheme solarized8 
 syntax on
 
 :command P Prettier
