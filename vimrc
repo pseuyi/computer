@@ -56,6 +56,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
+Plugin 'elzr/vim-json'
 
 " autocomplete
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/Ultisnips']
