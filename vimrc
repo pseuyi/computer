@@ -58,6 +58,8 @@ Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'elzr/vim-json'
 Plugin 'neovimhaskell/haskell-vim'
+Plugin 'alx741/vim-hindent'
+Plugin 'tidalcycles/vim-tidal'
 
 " autocomplete
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/Ultisnips']
@@ -80,6 +82,9 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+" make jj escape
+inoremap jj <ESC>
 
 " ctrl p
 let g:ctrlp_map = '<c-p>'
