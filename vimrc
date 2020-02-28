@@ -11,6 +11,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
 set termguicolors
 set ma
+set autoread " reload files automatically
 
 " insert spaces on tab
 set tabstop=2 shiftwidth=2 expandtab  autoindent smartindent
