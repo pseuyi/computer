@@ -60,6 +60,7 @@ Plugin 'elzr/vim-json'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'alx741/vim-hindent'
 Plugin 'tidalcycles/vim-tidal'
+Plugin 'faith/vim-go'
 
 " autocomplete
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/Ultisnips']
@@ -133,3 +134,4 @@ colorscheme solarized8
 syntax on
 
 :command P Prettier
+
