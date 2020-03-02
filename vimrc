@@ -64,6 +64,15 @@ Plugin 'neovimhaskell/haskell-vim'
 Plugin 'alx741/vim-hindent'
 Plugin 'tidalcycles/vim-tidal'
 Plugin 'fatih/vim-go'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'stamblerre/gocode'
+Plugin 'deoplete-plugins/deoplete-go'
+
+" enable deoplete by default
+if has('nvim')
+    " Enable deoplete on startup
+    let g:deoplete#enable_at_startup = 1
+endif
 
 " vim-go
 let g:go_highlight_build_constraints = 1
