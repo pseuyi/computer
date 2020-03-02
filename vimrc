@@ -16,6 +16,8 @@ set autoread " reload files automatically
 " insert spaces on tab
 set tabstop=2 shiftwidth=2 expandtab  autoindent smartindent
 
+" map leader to ','
+:let mapleader = ","
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -61,7 +63,23 @@ Plugin 'elzr/vim-json'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'alx741/vim-hindent'
 Plugin 'tidalcycles/vim-tidal'
-Plugin 'faith/vim-go'
+Plugin 'fatih/vim-go'
+
+" vim-go
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+" map ,gt to search for decls in package
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+" switch to go test
+au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 
 " autocomplete
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/Ultisnips']
@@ -107,7 +125,6 @@ endif
 " nerd tree
 let NERDTreeShowHidden=1
 " NerdTreeToggle alias
-let mapleader = ","
 nmap <leader>ne :NERDTreeToggle<cr>
 autocmd VimEnter * NERDTree
 
