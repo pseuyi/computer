@@ -101,8 +101,6 @@ alias be="bundle exec"
 export PATH=$HOME/.rbenv/shims:$PATH
 eval "$(rbenv init -)"
 
-alias ss-stg='open https://spacestation-staging.wework.com/$(git rev-parse --abbrev-ref HEAD 2> /dev/null)/index.html'
-alias ss-lcl='open http://localhost:1337'
 alias gp='g pull'
 alias y='yarn'
 alias n='npm'
@@ -114,3 +112,9 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
   alias vi="nvim"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/freda/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/freda/dev/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/freda/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freda/dev/google-cloud-sdk/completion.zsh.inc'; fi

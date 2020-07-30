@@ -5,6 +5,7 @@
 [alias]
   co = checkout
   cm = commit
+  amend = commit --amend --no-edit
   s = status
   b = branch
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
