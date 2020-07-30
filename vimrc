@@ -143,6 +143,7 @@ filetype plugin indent on    " required
 
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+let g:prettier#config#use_tabs = 'false'
 
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
