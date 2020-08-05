@@ -50,7 +50,7 @@ Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'Quramy/tsuquyomi'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'justinmk/vim-syntax-extra'
-Plugin '907th/vim-auto-save'
+" Plugin '907th/vim-auto-save'
 Plugin 'elmcast/elm-vim'
 Plugin 'avh4/elm-format'
 Plugin 'tpope/vim-surround'
@@ -67,6 +67,7 @@ Plugin 'fatih/vim-go'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'stamblerre/gocode'
 Plugin 'deoplete-plugins/deoplete-go'
+Plugin 'jparise/vim-graphql'
 
 " enable deoplete by default
 if has('nvim')
@@ -143,7 +144,7 @@ filetype plugin indent on    " required
 
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-let g:prettier#config#use_tabs = 'false'
+" let g:prettier#config#use_tabs = 'false'
 
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
