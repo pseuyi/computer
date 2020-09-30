@@ -17,7 +17,7 @@ export GOPATH=$HOME/go
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="refined"
+ZSH_THEME="pure"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -114,7 +114,7 @@ if type nvim > /dev/null 2>&1; then
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/freda/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/freda/dev/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/freda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/freda/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/freda/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freda/dev/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/freda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freda/google-cloud-sdk/completion.zsh.inc'; fi

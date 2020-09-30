@@ -12,6 +12,7 @@ set directory^=$HOME/.vim/tmp//
 set termguicolors
 set ma
 set autoread " reload files automatically
+set backupcopy=yes " for parcel hmr
 
 " insert spaces on tab
 set tabstop=2 shiftwidth=2 expandtab  autoindent smartindent
@@ -55,6 +56,7 @@ Plugin 'elmcast/elm-vim'
 Plugin 'avh4/elm-format'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-abolish'
 Plugin 'valloric/youcompleteme'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
