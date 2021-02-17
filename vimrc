@@ -142,8 +142,9 @@ nmap <leader>ne :NERDTreeToggle<cr>
 autocmd VimEnter * NERDTree
 
 " ale
-let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'flow'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['ruby', 'rubocop', 'sorbet']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'flow'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
 let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
