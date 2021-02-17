@@ -47,7 +47,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'mileszs/ack.vim'
-Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+"Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'Quramy/tsuquyomi'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'justinmk/vim-syntax-extra'
@@ -70,6 +70,7 @@ Plugin 'Shougo/deoplete.nvim'
 "Plugin 'stamblerre/gocode'
 "Plugin 'deoplete-plugins/deoplete-go'
 Plugin 'jparise/vim-graphql'
+Plugin 'dense-analysis/ale'
 
 " enable deoplete by default
 if has('nvim')
@@ -140,9 +141,14 @@ let NERDTreeShowHidden=1
 nmap <leader>ne :NERDTreeToggle<cr>
 autocmd VimEnter * NERDTree
 
+" ale
+let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'flow'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['ruby', 'rubocop', 'sorbet']}
+let g:ale_lint_on_save = 1
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
@@ -165,4 +171,5 @@ colorscheme solarized8
 syntax on
 
 :command P Prettier
+:command A ALEFix
 
