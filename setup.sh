@@ -14,29 +14,24 @@ echo "setting up computer . . ."
 # }
 
 echo "checking homebrew . . ."
-which -s brew
-if [[ $? != 0 ]] ; then
-    echo "installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-    echo "updating homebrew"
-    brew update
-fi
+#which -s brew
+#if [[ $? != 0 ]] ; then
+#    echo "installing homebrew"
+#    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#else
+#    echo "updating homebrew"
+#    brew update
+#fi
 
 tap "caskroom/cask"
 
 formulas=(
   git
   zsh
-  heroku
-  # aws
   node
   npm
   yarn
-  bundler
   ruby
-  rvm
-  imagemagick
   postgresql
   redis
   atom
