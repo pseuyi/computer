@@ -47,7 +47,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'mileszs/ack.vim'
-"Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'Quramy/tsuquyomi'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'justinmk/vim-syntax-extra'
@@ -142,7 +142,7 @@ nmap <leader>ne :NERDTreeToggle<cr>
 autocmd VimEnter * NERDTree
 
 " ale
-let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'flow'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'flow-language-server'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
