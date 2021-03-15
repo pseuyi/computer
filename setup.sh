@@ -67,4 +67,5 @@ env RCRC=$HOME/dev/computer/rcrc rcup
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # change to zsh
-chsh -s $(which zsh)
+chsh -s /bin/zsh
+# chsh -s $(which zsh)
