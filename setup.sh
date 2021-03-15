@@ -14,19 +14,18 @@ echo "setting up computer . . ."
 # }
 
 echo "checking homebrew . . ."
-#which -s brew
-#if [[ $? != 0 ]] ; then
-#    echo "installing homebrew"
-#    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#else
-#    echo "updating homebrew"
-#    brew update
-#fi
+which -s brew
+if [[ $? != 0 ]] ; then
+    echo "installing homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "updating homebrew"
+    brew update
+fi
 
-tap "caskroom/cask"
 
 formulas=(
-  git
+  #git
   zsh
   node
   npm
@@ -34,30 +33,38 @@ formulas=(
   ruby
   postgresql
   redis
-  atom
   docker
   rcm
   ack
   the_silver_searcher
   neovim
+  rbenv
 )
 
-# apps=(
-#   google-chrome
-#   atom
-#   vlc
-# )
+apps=(
+  google-chrome
+  atom
+  vlc
+  flux
+  iterm2
+  slack
+  insomnia
+  tableplus
+  Postgres
+  #1password
+)
 
 echo "installing formulas . . ."
 brew install ${formulas[@]}
 
-# echo "installing applications . . ."
-# brew cask install --appdir="/Applications" ${apps[@]}
+echo "installing applications . . ."
+brew install --cask --appdir="/Applications" ${apps[@]}
 
-# env RCRC=$HOME/computer/rcrc rcup
+# set RCRC to computer dir
+env RCRC=$HOME/dev/computer/rcrc rcup
 
 # install oh-my-zsh
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # change to zsh
 chsh -s $(which zsh)
