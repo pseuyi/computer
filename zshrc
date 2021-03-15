@@ -8,7 +8,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
-source $HOME/.ghcup/env
+# source $HOME/.ghcup/env
 # export PATH="/usr/local/opt/bison/bin:$PATH"
 
 # path to go
@@ -65,8 +65,8 @@ plugins=(git git-open ruby rails rbenv nvm rust docker zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # User configuration
 
