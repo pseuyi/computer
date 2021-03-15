@@ -142,7 +142,8 @@ nmap <leader>ne :NERDTreeToggle<cr>
 autocmd VimEnter * NERDTree
 
 " ale
-let g:ale_fixers = {'javascript': ['prettier', 'eslint', 'flow-language-server'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
+let g:ale_linters = {'javascript': ['flow-language-server']}
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
