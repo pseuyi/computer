@@ -17,7 +17,7 @@ export GOPATH=$HOME/go
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="refined"
+ZSH_THEME="refined"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -65,8 +65,8 @@ plugins=(git git-open ruby rails rbenv nvm rust docker zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# autoload -U promptinit; promptinit
-# prompt pure
+#autoload -U promptinit; promptinit
+#prompt pure
 
 # User configuration
 
