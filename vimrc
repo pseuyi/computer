@@ -73,6 +73,7 @@ Plugin 'Shougo/deoplete.nvim'
 "Plugin 'deoplete-plugins/deoplete-go'
 Plugin 'jparise/vim-graphql'
 Plugin 'dense-analysis/ale'
+Plugin 'kien/ctrlp.vim'
 
 " enable deoplete by default
 if has('nvim')
