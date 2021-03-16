@@ -187,5 +187,14 @@ if has('nvim')
   tnoremap <c-w><c-c> <C-\><C-n>:exit<CR>
   command! -nargs=* T split | terminal <args>
   command! -nargs=* VT vsplit | terminal <args>
+
+  tnoremap <c-w>H <C-\><C-N><C-w>H
+  tnoremap <c-w>J <C-\><C-N><C-w>J
+  tnoremap <c-w>K <C-\><C-N><C-w>K
+  tnoremap <c-w>L <C-\><C-N><C-w>L
+  tnoremap <c-w><c-w> <C-\><C-N><C-w><C-w>
+  tnoremap <c-w>W <C-\><C-N><C-w>W
+  tnoremap <c-w>gt <C-\><C-N>gt
+  tnoremap <c-w>gT <C-\><C-N>gT
 endif
 
