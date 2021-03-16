@@ -50,7 +50,8 @@ apps=(
   slack
   insomnia
   tableplus
-  Postgres
+  postgres
+  zoom
   #1password
 )
 
