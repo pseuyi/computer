@@ -108,6 +108,7 @@ alias n='npm'
 alias ln='link'
 alias trash='rmtrash'
 alias rm="echo Use 'trash', or the full path i.e. '/bin/rm'"
+alias lcl='f() { open http://localhost:$1 };f'
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
