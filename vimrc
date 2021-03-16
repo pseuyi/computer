@@ -182,9 +182,10 @@ let g:neoterm_autoscroll = 1
 
 " nvim keymappings
 if has('nvim')
-  tnoremap <C-w> <C-\><C-n>
+  autocmd TermOpen * startinsert
+  tnoremap <c-w>N <C-\><C-n>
+  tnoremap <c-w><c-c> <C-\><C-n>:exit<CR>
   command! -nargs=* T split | terminal <args>
   command! -nargs=* VT vsplit | terminal <args>
-  noremap <C-c> <C-w>:exit<CR>
 endif
 
