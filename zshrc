@@ -10,6 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # source $HOME/.ghcup/env
 # export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # path to go
 export GOPATH=$HOME/go
