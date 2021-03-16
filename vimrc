@@ -5,7 +5,9 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" call vundle#begin()
+" nvim
+call vundle#begin('~/.config/nvim/bundle')
 set number
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
@@ -57,7 +59,7 @@ Plugin 'elmcast/elm-vim'
 Plugin 'tpope/vim-surround'
 "Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-abolish'
-Plugin 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme', { 'do': './install.py --clang-completer --system-libclang' }
 Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
@@ -174,4 +176,12 @@ syntax on
 
 :command P Prettier
 :command A ALEFix
+
+" nvim keymappings
+if has('nvim')
+  tnoremap <C-w> <C-\><C-n>
+  command! -nargs=* T split | terminal <args>
+  command! -nargs=* VT vsplit | terminal <args>
+  noremap <C-c> <C-w>:q!<CR>
+endif
 
