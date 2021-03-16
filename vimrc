@@ -177,11 +177,13 @@ syntax on
 :command P Prettier
 :command A ALEFix
 
+let g:neoterm_autoscroll = 1
+
 " nvim keymappings
 if has('nvim')
   tnoremap <C-w> <C-\><C-n>
   command! -nargs=* T split | terminal <args>
   command! -nargs=* VT vsplit | terminal <args>
-  noremap <C-c> <C-w>:q!<CR>
+  noremap <C-c> <C-w>:exit<CR>
 endif
 
