@@ -98,7 +98,7 @@ au FileType go nmap <leader>gt :GoDeclsDir<cr>
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 
 " autocomplete
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/Ultisnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/bundle/ultisnips']
 let g:SuperTabDefaultCompletionType    = '<C-n>'
 let g:SuperTabCrMapping                = 0
 let g:UltiSnipsExpandTrigger           = '<tab>'
