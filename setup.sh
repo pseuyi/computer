@@ -52,6 +52,7 @@ apps=(
   tableplus
   postgres
   zoom
+  find-any-file
   #1password
 )
 
