@@ -4,12 +4,12 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 " call vundle#begin()
 " nvim
 call vundle#begin('~/.config/nvim/bundle')
 set number
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
 set directory^=$HOME/.vim/tmp//
 set termguicolors
 set ma
@@ -129,6 +129,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules\|DS_Store\|.git'
   \ }
+let g:ctrlp_max_files=0
 
 " let g:auto_save = 1
 let g:elm_format_autosave = 1
