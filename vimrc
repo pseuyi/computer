@@ -75,6 +75,9 @@ Plugin 'Shougo/deoplete.nvim'
 Plugin 'jparise/vim-graphql'
 Plugin 'dense-analysis/ale'
 Plugin 'kien/ctrlp.vim'
+" Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
 
 " enable deoplete by default
 if has('nvim')
@@ -130,7 +133,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules\|DS_Store\|.git'
   \ }
-let g:ctrlp_max_files=0
+"let g:ctrlp_max_files=0
 
 " let g:auto_save = 1
 let g:elm_format_autosave = 1
