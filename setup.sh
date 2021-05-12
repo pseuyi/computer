@@ -43,7 +43,10 @@ formulas=(
 
 apps=(
   google-chrome
+  firefox
+  microsoft-edge
   atom
+  vscode
   vlc
   flux
   iterm2
