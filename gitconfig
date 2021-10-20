@@ -15,6 +15,10 @@
   save = !git add . $1 && git cm -m save --no-verify $1
   stash-unapply = !git stash show -p | git apply -R
   lo = log --abbrev-commit --oneline -25
+  rmb = "!f() { git branch --merged | grep -v "master" | while read i; do git branch -d $i; done; }; f"
 
 [rerere]
   enabled = false
+[core]
+	editor = /usr/bin/vim
+  ignorecase = true
