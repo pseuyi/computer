@@ -1,13 +1,17 @@
 [user]
-  name = 
-  email = 
+	name = freda suyi
+	email = pseuyi@gmail.com
 
 [alias]
   co = checkout
   cm = commit
+  cp = cherry-pick
   amend = commit --amend --no-edit
   s = status
   b = branch
+  p = push origin HEAD
+  pu = push -u origin HEAD
+  pf = push -f origin HEAD
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
@@ -22,3 +26,9 @@
 [core]
 	editor = /usr/bin/vim
   ignorecase = true
+	excludesfile = /Users/freda/.gitignore_global
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

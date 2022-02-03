@@ -19,14 +19,22 @@ set backupcopy=yes " for parcel hmr
 " insert spaces on tab
 set tabstop=2 shiftwidth=2 expandtab  autoindent smartindent
 
+" yaml
+syntax on
+filetype plugin indent on
+
+"Get the 2-space YAML as the default when hit carriage return after the colon
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+set is hlsearch ai ic scs
+nnoremap <esc><esc> :nohls<cr>
+
 " map leader to ','
 :let mapleader = ","
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
+" let Vundle manage Vundle, required Plugin 'VundleVim/Vundle.vim' 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -78,6 +86,7 @@ Plugin 'kien/ctrlp.vim'
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
+Plugin 'tarekbecker/vim-yaml-formatter'
 
 " enable deoplete by default
 if has('nvim')
@@ -136,7 +145,8 @@ let g:ctrlp_custom_ignore = {
 "let g:ctrlp_max_files=0
 
 " let g:auto_save = 1
-let g:elm_format_autosave = 1
+let g:auto_save_events = ["TextChanged","CursorHold"]
+"let g:elm_format_autosave = 1
 
 " silver searcher
 if executable('ag')
