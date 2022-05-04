@@ -1,12 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
+# export PATH=$HOME/.local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # source $HOME/.ghcup/env
 # export PATH="/usr/local/opt/bison/bin:$PATH"
@@ -104,9 +106,10 @@ eval "$(rbenv init -)"
 
 alias gp='g pull'
 alias y='yarn'
-alias n='npm'
+# alias n='npm'
 alias ln='link'
 alias trash='rmtrash'
+alias dirtrash='rmdirtrash'
 alias rm="echo Use 'trash', or the full path i.e. '/bin/rm'"
 alias lcl='f() { open http://localhost:$1 };f'
 
@@ -120,3 +123,9 @@ if [ -f '/Users/freda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/freda/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/freda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freda/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit

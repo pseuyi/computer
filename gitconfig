@@ -10,7 +10,7 @@
   s = status
   b = branch
   p = push origin HEAD
-  pu = push -u origin HEAD
+  pu = push -u
   pf = push -f origin HEAD
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
@@ -32,3 +32,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[push]
+	default = current
