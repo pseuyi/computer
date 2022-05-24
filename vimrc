@@ -1,92 +1,86 @@
-au! BufNewFile,BufRead *.svelte set ft=html
+" SETTINGS
+set nocompatible              " be improved
+filetype off                  " don't detect filetypes 
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+" vundle and nvim:
+" set the runtime path to include Vundle and initialize (nvim)
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-" call vundle#begin()
-" nvim
 call vundle#begin('~/.config/nvim/bundle')
-set number
-set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
-set directory^=$HOME/.vim/tmp//
-set termguicolors
-set ma
+Plugin 'VundleVim/Vundle.vim'  " required
+
+" vim-jsx-typescript: syntax highlighting
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
+set number " show line numbers
+set runtimepath^=~/.config/nvim/bundle/ctrlp.vim " find ctrlp
+set directory^=$HOME/.vim/tmp// " store swp files
+set termguicolors " allow 24-bit colors
 set autoread " reload files automatically
-set backupcopy=yes " for parcel hmr
+au CursorHold,CursorHoldI * checktime " trigger when cursor stops moving
+set backupcopy=yes " update files directly (for parcel hmr)
+set tabstop=2 shiftwidth=2 expandtab autoindent smartindent " insert spaces on tab
+set is hlsearch ai ic scs " highlight search pattern results
 
-" insert spaces on tab
-set tabstop=2 shiftwidth=2 expandtab  autoindent smartindent
-
-" yaml
-syntax on
-filetype plugin indent on
-
-"Get the 2-space YAML as the default when hit carriage return after the colon
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-set is hlsearch ai ic scs
-nnoremap <esc><esc> :nohls<cr>
-
-" map leader to ','
+" KEYMAPPINGS
+" start commands with ,
+map leader to ',' 
 :let mapleader = ","
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" esc twice to turn of search highlighting
+nnoremap <esc><esc> :nohls<cr> 
 
-" let Vundle manage Vundle, required Plugin 'VundleVim/Vundle.vim' 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" PLUGINS
+
+" keep Plugin commands between vundle#begin/end.
+
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
+
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'tpope/vim-fugitive'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'kien/ctrlp.vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'scrooloose/nerdtree'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'mileszs/ack.vim'
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plugin 'Quramy/tsuquyomi'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'justinmk/vim-syntax-extra'
-" Plugin '907th/vim-auto-save'
-Plugin 'elmcast/elm-vim'
-"Plugin 'avh4/elm-format'
 Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-abolish'
 Plugin 'valloric/youcompleteme', { 'do': './install.py --clang-completer --system-libclang' }
-Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
-Plugin 'elzr/vim-json'
-"Plugin 'neovimhaskell/haskell-vim'
-"Plugin 'alx741/vim-hindent'
-"Plugin 'tidalcycles/vim-tidal'
-"Plugin 'fatih/vim-go'
 Plugin 'Shougo/deoplete.nvim'
+"Plugin 'jiangmiao/auto-pairs'
+
+" elm
+"Plugin 'elmcast/elm-vim'
+"Plugin 'avh4/elm-format'
+
+" go
+"Plugin 'fatih/vim-go'
 "Plugin 'stamblerre/gocode'
 "Plugin 'deoplete-plugins/deoplete-go'
-Plugin 'jparise/vim-graphql'
+
+" haskell
+"Plugin 'neovimhaskell/haskell-vim'
+
+" js
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+" typescript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'Quramy/tsuquyomi'
+
+" syntax
 Plugin 'dense-analysis/ale'
-Plugin 'kien/ctrlp.vim'
-" Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-endwise'
-Plugin 'tarekbecker/vim-yaml-formatter'
+Plugin 'elzr/vim-json'
+"Plugin 'jparise/vim-graphql'
+"Plugin 'tarekbecker/vim-yaml-formatter'
 
 " enable deoplete by default
 if has('nvim')
@@ -161,9 +155,22 @@ autocmd VimEnter * NERDTree
 
 " ale
 let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
-let g:ale_linters = {'javascript': ['flow-language-server']}
+let g:ale_linters = {'javascript': ['flow-language-server'], 'typescript': ['eslint', 'tsserver']}
 let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+"let g:ale_floating_preview = 1
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
+let g:ale_hover_to_floating_preview = 1
+"let g:ale_fix_on_save = 1
+" let g:ale_sign_error = "🔥"
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = "⚠️  "
+
+
+nnoremap af :ALEFix<CR>
+nnoremap ah :ALEHover<CR>
+nnoremap ag :ALEGoToDefinition<CR>
+nnoremap an :ALENext<CR>
+nnoremap ap :ALEPrevious<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -191,7 +198,6 @@ colorscheme solarized8
 syntax on
 
 :command P Prettier
-:command A ALEFix
 
 let g:neoterm_autoscroll = 1
 
