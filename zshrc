@@ -108,7 +108,8 @@ alias n='npm'
 alias ln='link'
 alias trash='rmtrash'
 alias rm="echo Use 'trash', or the full path i.e. '/bin/rm'"
-alias lcl='f() { open http://localhost:$1 };f'
+alias lcl='f() { open http://localhost:800$1 };f'
+alias stg='f() { open https://staging.editor.costarastrology.com/ };f'
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
@@ -120,3 +121,6 @@ if [ -f '/Users/freda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/freda/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/freda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freda/google-cloud-sdk/completion.zsh.inc'; fi
+
+# co-star scripts
+source ~/dev/horrorscope-backend/scripts/aliases.sh

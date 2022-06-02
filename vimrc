@@ -2,12 +2,6 @@
 set nocompatible              " be improved
 filetype off                  " don't detect filetypes 
 
-" vundle and nvim:
-" set the runtime path to include Vundle and initialize (nvim)
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle')
-Plugin 'VundleVim/Vundle.vim'  " required
-
 " vim-jsx-typescript: syntax highlighting
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
@@ -22,87 +16,42 @@ set backupcopy=yes " update files directly (for parcel hmr)
 set tabstop=2 shiftwidth=2 expandtab autoindent smartindent " insert spaces on tab
 set is hlsearch ai ic scs " highlight search pattern results
 
-" KEYMAPPINGS
-" start commands with ,
-map leader to ',' 
-:let mapleader = ","
-" esc twice to turn of search highlighting
-nnoremap <esc><esc> :nohls<cr> 
-
 " PLUGINS
 
-" keep Plugin commands between vundle#begin/end.
-
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'kien/ctrlp.vim'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
-Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-abolish'
-Plugin 'valloric/youcompleteme', { 'do': './install.py --clang-completer --system-libclang' }
-Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
-Plugin 'Shougo/deoplete.nvim'
-"Plugin 'jiangmiao/auto-pairs'
-
-" elm
-"Plugin 'elmcast/elm-vim'
-"Plugin 'avh4/elm-format'
-
-" go
-"Plugin 'fatih/vim-go'
-"Plugin 'stamblerre/gocode'
-"Plugin 'deoplete-plugins/deoplete-go'
-
-" haskell
-"Plugin 'neovimhaskell/haskell-vim'
-
+call plug#begin('~/.vim/plugged')
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'tpope/vim-fugitive'
+Plug 'git://git.wincent.com/command-t.git'
+Plug 'kien/ctrlp.vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
 " js
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 " typescript
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'Quramy/tsuquyomi'
+" gql
+Plug 'jparise/vim-graphql'
+" language servers
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'elzr/vim-json'
+call plug#end()
 
-" syntax
-Plugin 'dense-analysis/ale'
-Plugin 'elzr/vim-json'
-"Plugin 'jparise/vim-graphql'
-"Plugin 'tarekbecker/vim-yaml-formatter'
+" KEYMAPPINGS
 
-" enable deoplete by default
-if has('nvim')
-    " Enable deoplete on startup
-    let g:deoplete#enable_at_startup = 1
-endif
+" begin commands with ,
+:let mapleader = ","
 
-" vim-go
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-let g:go_fmt_command = "goimports"
-let g:go_auto_type_info = 1
-" map ,gt to search for decls in package
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
-" switch to go test
-au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
+" esc twice to turn of search highlighting
+nnoremap <esc><esc> :nohls<cr> 
 
 " autocomplete
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/bundle/ultisnips']
@@ -131,16 +80,10 @@ inoremap jj <ESC>
 
 " ctrl p
 let g:ctrlp_map = '<c-p>'
-
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules\|DS_Store\|.git'
   \ }
-"let g:ctrlp_max_files=0
-
-" let g:auto_save = 1
-let g:auto_save_events = ["TextChanged","CursorHold"]
-"let g:elm_format_autosave = 1
 
 " silver searcher
 if executable('ag')
@@ -153,51 +96,13 @@ let NERDTreeShowHidden=1
 nmap <leader>ne :NERDTreeToggle<cr>
 autocmd VimEnter * NERDTree
 
-" ale
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'tslint', 'eslint'], 'ruby': ['standardrb', 'rubocop', 'sorbet']}
-let g:ale_linters = {'javascript': ['flow-language-server'], 'typescript': ['eslint', 'tsserver']}
-let g:ale_lint_on_save = 1
-"let g:ale_floating_preview = 1
-let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
-let g:ale_hover_to_floating_preview = 1
-"let g:ale_fix_on_save = 1
-" let g:ale_sign_error = "🔥"
-let g:ale_virtualtext_cursor = 1
-let g:ale_virtualtext_prefix = "⚠️  "
-
-
-nnoremap af :ALEFix<CR>
-nnoremap ah :ALEHover<CR>
-nnoremap ag :ALEGoToDefinition<CR>
-nnoremap an :ALENext<CR>
-nnoremap ap :ALEPrevious<CR>
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-" let g:prettier#config#use_tabs = 'false'
-
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-""
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+:command P Prettier
 
 set background=light
 colorscheme solarized8 
 syntax on
-
-:command P Prettier
 
 let g:neoterm_autoscroll = 1
 
@@ -219,3 +124,42 @@ if has('nvim')
   tnoremap <c-w>gT <C-\><C-N>gT
 endif
 
+" coc.nvim
+let g:coc_global_extensions = ['coc-prettier']
+
+set nobackup
+set nowritebackup
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
