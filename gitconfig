@@ -6,7 +6,7 @@
   co = checkout
   cm = commit
   cp = cherry-pick
-  am = commit --amend --no-edit
+  ca = commit --amend --no-edit
   s = status
   b = branch
   p = push origin HEAD
