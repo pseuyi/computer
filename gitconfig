@@ -4,19 +4,21 @@
 
 [alias]
   co = checkout
-  cm = commit
+  cm = commit -m 
+  cn = commit -n -m
   cp = cherry-pick
   ca = commit --amend --no-edit
   s = status
   b = branch
   p = push origin HEAD
+  pnv = push origin HEAD --no-verify
   pu = push -u origin HEAD
   pf = push -f origin HEAD
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
   dump = cat-file -p
   undo = reset --soft HEAD^
-  save = !git add . $1 && git cm -m save --no-verify $1
+  save = !git add . $1 && git cm save --no-verify $1
   stash-unapply = !git stash show -p | git apply -R
   lo = log --abbrev-commit --oneline -25
   rmb = "!f() { git branch --merged | grep -v "master" | while read i; do git branch -d $i; done; }; f"

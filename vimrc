@@ -50,8 +50,8 @@ call plug#end()
 " begin commands with ,
 :let mapleader = ","
 
-" esc twice to turn of search highlighting
-nnoremap <esc><esc> :nohls<cr> 
+" k twice to turn of search highlighting
+nnoremap <c-f> :nohls<cr> 
 
 " autocomplete
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/bundle/ultisnips']
