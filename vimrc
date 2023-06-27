@@ -166,6 +166,11 @@ endfunction
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" Format entire file
+xmap <leader>F  <Plug>(coc-format)
+nmap <leader>F  <Plug>(coc-format)
+
+" TODO: clean this up i'm not sure it works
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
