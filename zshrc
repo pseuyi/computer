@@ -128,6 +128,8 @@ source ~/dev/horrorscope-backend/scripts/aliases.sh
 
 #[ -f "/Users/freda/.ghcup/env" ] && source "/Users/freda/.ghcup/env" # ghcup-env
 export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/opt/homebrew/opt/ghc@9/bin:$PATH"
 export C_INCLUDE_PATH="`xcrun --show-sdk-path`/usr/include/ffi"
@@ -136,9 +138,10 @@ export C_INCLUDE_PATH="`xcrun --show-sdk-path`/usr/include/ffi"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm@12/include"
 export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
 export C_INCLUDE_PATH="`xcrun --show-sdk-path`/usr/include/ffi"
-export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
-export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
 
 # for haskell dev
 #export LANG=C
+# file size limit
+ulimit -n 1048575
 
+export PATH="/opt/homebrew/opt/redis@6.2/bin:$PATH"
