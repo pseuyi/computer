@@ -1,0 +1,77 @@
+#[[language]]
+#name = "haskell"
+#scope = "source.haskell"
+#injection-regex = "haskell"
+#file-types = ["hs", "hs-boot"]
+#roots = ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"]
+#comment-token = "--"
+#language-server = { command = "haskell-language-server-wrapper", args = ["--lsp"] }
+#indent = { tab-width = 2, unit = "  " }
+#auto-format = false
+#formatter = { command = "fourmolu" }
+
+[[language]]
+auto-format = true
+language-servers = [{name = "efm-lsp-fourmolu", only-features = ["format"]}, "haskell-language-server"]
+name = "haskell"
+file-types = ["hs", "hs-boot"]
+roots = ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"]
+
+
+[language-server]
+
+[language-server.efm-lsp-fourmolu]
+command = "efm-langserver"
+
+[language-server.efm-lsp-fourmolu.config]
+documentFormatting = true
+hover = true
+
+[[language-server.efm-lsp-fourmolu.config.languages.haskell]]
+formatCommand = "fourmolu --stdin-input-file ${INPUT}"
+formatStdin = true
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "(ts|typescript)"
+file-types = ["ts", "mts", "cts"]
+language-id = "typescript"
+shebangs = ["deno", "ts-node"]
+roots = []
+language-servers = [ "typescript-language-server" ]
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[grammar]]
+name = "typescript"
+source = { git = "https://github.com/tree-sitter/tree-sitter-typescript", rev = "b1bf4825d9eaa0f3bdeb1e52f099533328acfbdf", subpath = "typescript" }
+
+[[language]]
+name = "tsx"
+scope = "source.tsx"
+injection-regex = "(tsx)" # |typescript
+language-id = "typescriptreact"
+file-types = ["tsx"]
+roots = []
+language-servers = [ "typescript-language-server" ]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+
+[[language]]
+name = "css"
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
