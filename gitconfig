@@ -4,9 +4,12 @@
 
 [alias]
   co = checkout
-  cm = commit
+  cm = commit -m 
+  cn = commit -n -m
   cp = cherry-pick
-  amend = commit --amend --no-edit
+  ca = commit --amend --no-edit
+  fix = commit --fixup
+  ra = rebase -i --autosquash
   s = status
   b = branch
   p = push origin HEAD
