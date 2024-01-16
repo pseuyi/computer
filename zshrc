@@ -1,13 +1,9 @@
 export AWS_PROFILE=default
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH export PATH=$HOME/.local/bin:$PATH Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # source $HOME/.ghcup/env
 # export PATH="/usr/local/opt/bison/bin:$PATH"
@@ -144,4 +140,8 @@ export C_INCLUDE_PATH="`xcrun --show-sdk-path`/usr/include/ffi"
 # file size limit
 ulimit -n 1048575
 
-export PATH="/opt/homebrew/opt/redis@6.2/bin:$PATH"
+# openssl compatible with postgres 14
+export PATH="/opt/homebrew/opt/openssl@3.0/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3.0/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3.0/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3.0/lib/pkgconfig"
