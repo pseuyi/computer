@@ -21,45 +21,31 @@ j = "normal_mode" # Maps `jj` to exit insert mode
 "}" = ["extend_to_line_bounds", "goto_next_paragraph"]
 0 = "goto_line_start"
 "$" = "goto_line_end"
-"^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
-D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
-C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
-"%" = "match_brackets"
+# D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
+# C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
+# "%" = "match_brackets"
 S = "surround_add"
-u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
-U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
-y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
 "," = "normal_mode"
+y = ["yank_main_selection_to_clipboard"]
+d = ["yank_main_selection_to_clipboard", "delete_selection"]
 
 [keys.normal]
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
 "{" = ["goto_prev_paragraph", "collapse_selection"]
 "}" = ["goto_next_paragraph", "collapse_selection"]
 0 = "goto_line_start"
 "$" = "goto_line_end"
-"^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
 V = ["select_mode", "extend_to_line_bounds"]
-C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
-D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
-S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
+# C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
+D = ["yank_main_selection_to_clipboard", "delete_selection"]
+# S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
 "*" = ["move_prev_word_start", "move_next_word_end", "search_selection"]
 "@" = ["move_prev_word_start", "move_next_word_end", "search_selection", "global_search"]
-
-[keys.normal.y]
-y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection"]
+y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection"]
+p = ["paste_clipboard_after", "collapse_selection"]
 
 [keys.normal.d]
 d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
-t = ["extend_till_char"]
-s = ["surround_delete"]
-i = ["select_textobject_inner"]
-a = ["select_textobject_around"]
-j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-w = ["move_prev_word_start", "move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"] }
