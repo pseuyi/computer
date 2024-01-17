@@ -32,7 +32,7 @@ d = ["yank_main_selection_to_clipboard", "delete_selection"]
 
 [keys.normal]
 C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
-C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+C-p = ":open ~/.config/helix/config.toml" # Maps Ctrl-p to opening of the helix config file
 "{" = ["goto_prev_paragraph", "collapse_selection"]
 "}" = ["goto_next_paragraph", "collapse_selection"]
 0 = "goto_line_start"
