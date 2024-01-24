@@ -37,8 +37,10 @@ formulas=(
   rcm
   ack
   the_silver_searcher
-  neovim
+  # neovim
   rbenv
+  helix
+  htop
 )
 
 apps=(
