@@ -29,34 +29,34 @@ formulas=(
   zsh
   node
   npm
-  yarn
-  ruby
-  postgresql
-  redis
-  docker
+  #yarn
+  #ruby
+  #postgresql
+  #redis
+  #docker
   rcm
   ack
-  the_silver_searcher
-  # neovim
-  rbenv
+  #the_silver_searcher
+  #neovim
+  #rbenv
   helix
-  htop
+  #htop
 )
 
 apps=(
-  google-chrome
+  #google-chrome
   firefox
-  microsoft-edge
-  atom
-  vscode
-  vlc
-  flux
-  iterm2
-  slack
+  #microsoft-edge
+  #atom
+  #vscode
+  #vlc
+  #flux
+  #iterm2
+  #slack
   insomnia
   tableplus
-  postgres
-  zoom
+  #postgres
+  #zoom
   find-any-file
   #1password
 )
