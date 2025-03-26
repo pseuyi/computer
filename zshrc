@@ -120,3 +120,40 @@ if [ -f '/Users/freda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/freda/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/freda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/freda/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Activate `fnm`: https://github.com/Schniz/fnm
+if command -v fnm >/dev/null; then
+    eval "$(fnm env --use-on-cd)"
+fi
+
+# Activate `direnv`: https://direnv.net/
+eval "$(direnv hook zsh)"
+
+# Source `nix-direnv`: https://github.com/nix-community/nix-direnv
+if [[ -e /run/current-system/sw/share/nix-direnv/direnvrc ]]; then
+    source /run/current-system/sw/share/nix-direnv/direnvrc
+elif [[ -e "$HOME/.nix-profile/share/nix-direnv/direnvrc" ]]; then
+    source "$HOME/.nix-profile/share/nix-direnv/direnvrc"
+fi
+
+# fnm
+FNM_PATH="/Users/mfreda/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/mfreda/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+for dir in ${(s.:.)XDG_DATA_DIRS-}; do
+  if [ -d "$dir/zsh/site-functions" ]; then
+    fpath+="$dir/zsh/site-functions"
+  fi
+  if [ -d "$dir/zsh/vendor-completions" ]; then
+    fpath+="$dir/zsh/vendor-completions"
+  fi
+done
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
